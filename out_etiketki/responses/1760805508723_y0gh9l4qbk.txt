@@ -1,0 +1,494 @@
+URL: https://alfapiter.ru/assets/template/css/custom.css?21
+CT: text/css
+
+.calculator-result_total {
+    display:none!important;
+}
+.calculator-form-block {
+    margin-bottom:0;
+}
+#calculator {
+    position: sticky;
+    top: 0; /* Расстояние от верхней границы экрана */
+}
+.calculator-grid {
+    padding-bottom:30px;
+}
+.checkbox.checked {
+    background-image: url(../images/Checkbox-checked.svg);
+}
+.material-description {
+    margin-bottom:20px;
+}
+.video-item {
+    position: relative; /* Для управления слоями */
+    display: inline-block;
+}
+
+.video-item img {
+    display: block;
+    width: 100%; /* Убедитесь, что изображение заполняет ссылку */
+    height: auto;
+    filter: brightness(70%); /* Затемнение изображения */
+    transition: filter 0.3s ease; /* Плавное изменение фильтра */
+    object-fit: cover; /* Обрезает изображение, чтобы оно заполнило контейнер */
+    aspect-ratio: 1;
+}
+
+.video-item:hover img {
+    filter: brightness(100%); /* Убираем затемнение при наведении */
+}
+
+.video-item::before {
+    content: ''; /* Используем пустое содержимое */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath fill="white" d="M8 5v14l11-7z"/%3E%3C/svg%3E') no-repeat center center;
+    background-size: 30px;
+    pointer-events: none; /* Иконка не блокирует клики */
+    z-index: 1; /* Убедитесь, что иконка всегда поверх изображения */
+}
+
+.video-item:hover::before {
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath fill="rgba(255, 255, 255, 0.8)" d="M8 5v14l11-7z"/%3E%3C/svg%3E') no-repeat center center;
+    background-size: 30px;
+}
+
+.calculator-result_data_block,
+.calculator-manager_data_block,
+.calculator-result_total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 20px;
+    padding: 0;
+    width: 100%;
+}
+.calculator-result_data_param,
+.calculator-manager_data_param {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A6A6A6;
+}
+.calculator-result_data_value,
+.calculator-manager_data_value {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #767676;
+}
+.calculator-result_data,
+.calculator-manager_data {
+    max-width: 300px;
+    width: 100%;
+
+}
+
+.w-checkbox:has(input:checked) .checkbox {
+    background-image: url(../images/Checkbox-Cheked.svg);
+}
+
+
+.w-slider-nav {
+    font-size: 24px;
+}
+.w-slider-dot {
+    background-color: #d52a2a;
+    border: 8px solid #fff;
+}
+.w-slider-dot.w-active {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: 2px solid #d52a2a;
+    top: 0px;
+}
+ul.file-list {
+    position:absolute;
+    list-style: none;
+    padding: 0 10px;
+    background:#fff;
+}
+.form-btn-wrapper ul.file-list {
+    position:relative;
+    margin-bottom:0;
+}
+ul.file-list li {
+    font-size: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    align-items: center;
+}
+ul.file-list .delete-file {
+    margin-left:10px;
+}
+.description-image {
+    max-width:200px;
+}
+.equipment-description {
+    display: flex;
+    align-items: center; /* Центрирует по вертикали */
+    gap: 40px; /* Расстояние между изображением и текстом */
+}
+
+.equipment-description .description-image img {
+    max-width: 100px; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическое сохранение пропорций */
+    display: block; /* Убирает возможные нижние отступы */
+}
+
+.equipment-description .description-content {
+    display: flex;
+    flex-direction: column; /* Расположение текста вертикально */
+    justify-content: center; /* Выравнивание по вертикали */
+}
+
+.equipment-description .description-heading {
+    font-weight: bold; /* Жирный текст для заголовка */
+    margin-bottom: 5px; /* Отступ между заголовком и текстом */
+}
+
+.equipment-description .description-text {
+    font-size: 14px; /* Размер текста для описания */
+    color: #666; /* Цвет текста */
+}
+
+/* ТАБЛИЦЫ ПРАЙС */
+/* Стили для таблиц внутри блока .price-tables */
+.price-tables {
+  overflow-x: auto; /* Горизонтальная прокрутка для контейнера */
+}
+
+.price-tables table {
+  width: 100%; /* Таблица на всю ширину */
+  border-collapse: collapse; /* Убираем промежутки между ячейками */
+  border-radius: 4px; /* Небольшие скругления для таблицы */
+}
+
+.price-tables th, 
+.price-tables td {
+  text-align: center; /* Выравнивание текста по центру */
+  padding: 8px; /* Отступы внутри ячеек */
+  border: 1px solid var(--gray-border); /* Цвет границы */
+}
+
+.price-tables thead {
+  background-color: var(--white-smoke); /* Фон для строки заголовка */
+}
+
+.price-tables th {
+  background-color: var(--white-smoke); /* Чередование фонов для строк */
+}
+.calculator-order .w-form-done,
+.calculator-order .w-form-fail {
+    position: sticky;
+    top: 0;
+}
+.alcalc-timing .radio {
+    flex-direction:column;
+}
+.alcalc-timing .priority-text {
+    display:block;
+}
+
+@media (max-width: 768px) {
+  .price-tables table {
+    min-width: 600px; /* Минимальная ширина таблицы для мобильных */
+  }
+  .calc-widget-button-wrapper {
+      display:none;
+  }
+}
+
+.calc-widget-button-wrapper {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    direction: ltr;
+    z-index: 9;
+    bottom:50px;
+    right:130px;
+}
+.calc-widget-button-inner-container {
+    position: relative;
+    display: inline-block;
+    -webkit-transform: scale(.85);
+    transform: scale(.85);
+    -webkit-transition: transform .3s;
+    transition: transform .3s;
+}
+.calc-widget-button-inner-mask {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    height: 82px;
+    min-width: 66px;
+    -webkit-width: calc(100% + 16px);
+    width: calc(100% + 16px);
+    border-radius: 100px;
+    background: #f11716;
+    opacity: .2;
+}
+.calc-widget-button-block {
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+.calc-widget-button-inner-block {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 66px;
+    border-radius: 100px;
+    background: #f11716;
+    box-sizing: border-box;
+    align-items:center;
+    justify-content:center;
+    transition: background .3s;
+}
+.calc-widget-button-inner-block:hover {
+    background:#d52a2a;
+}
+.calc-widget-button {
+    display:block;
+}
+.calc-widget-button-icon {
+    width:26px;
+}
+.contacts-socials {
+    display:flex;
+}
+.contacts-socials a {
+    display:block;
+    width:32px;
+    height:32px;
+    margin-right:20px;
+}
+.header-socials .social-link {
+    font-size:24px;
+    transition: all .2s;
+}
+@media screen and (max-width: 767px) {
+    .header-socials .social-link {
+        font-size:18px;
+        padding:0;
+    }  
+}
+.alcalc-timing .fast-order {
+    position:relative;
+    flex-direction: row;
+}
+.radio-left {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-right:10px;
+}
+
+/* Правая колонка – значок и текст, выровненные по центру */
+.radio-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+		      /* Значок i */
+.tooltip-icon {
+  border:1px solid var(--primary); /* красный */
+  color: var(--primary);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: auto; /* сдвигаем вправо */
+  cursor: default;
+  transition: background-color .3s, color .3s;
+}
+
+/* При наведении на родительскую кнопку */
+.radio:hover .tooltip-icon,
+.radio.selected .tooltip-icon {
+  border:1px solid var(--white);
+  color: var(--white);
+}
+
+/* Стили для всплывающей подсказки */
+.tooltip-text {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s;
+  z-index: 10;
+}
+
+/* Показываем tooltip при наведении на значок */
+.tooltip-icon:hover + .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.size-quick {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.size-btn {
+    line-height:40px;
+    margin-top:20px;
+    margin-bottom:40px;
+}
+.size-btn.active {
+    background:var(--primary);
+    color:var(--white);
+    
+}
+h1.h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 140%;
+}
+.review-block {
+    background:#edf2f8;
+    padding-bottom:40px;
+}
+.grid-reviews {
+  display: grid;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 40px;
+}
+.good-place {
+    max-height:300px;
+}
+.size-block {
+    border-top:1px solid #aaa;
+    padding-top:20px;
+}
+.alcalc-size-list .size-block:first-child {
+    border-top:0;
+    padding-top:0;
+}
+.add-size-btn {
+    margin-bottom:30px;
+    background:transparent;
+    color:var(--primary);
+}
+.size-block {
+  position: relative;
+}
+/* Стили для кнопки удаления внутри блока */
+.size-block .remove-size-btn {
+  position: absolute;
+  display:block;
+  width:20px;
+  height:20px;
+  top: 20px;     /* отступ от верхнего края */
+  right: 0;   /* отступ от правого края */
+  color: var(--primary);
+  background:transparent;
+  border: none;
+  font-size: 1rem;  /* чуть больше, чтобы иконка не мелкая */
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+.size-block .remove-sticker-size-btn {
+    color:var(--primary);
+    background:transparent;
+}
+
+/* При наведении — можно подсветку */
+.size-block .remove-size-btn:hover,
+.size-block .remove-sticker-size-btn:hover{
+  opacity: 0.8;
+}
+
+.size-block .sheet-fill-status {
+    font-size:12px;
+    color:#888;
+    margin-bottom:10px;
+}
+.size-block .add-sticker-size-btn {
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:10px;
+    background:transparent;
+    color:#aaa;
+}
+.size-block .add-sticker-size-btn:hover {
+    color:#888;
+}
+.stickers-list .sticker-card {
+    display:flex;
+    padding:10px;
+    /*border:1px solid var(--gray-border);*/
+    border-radius:4px;
+    margin-bottom:10px;
+    background:var(--white-smoke);
+}
+.sticker-card > div {
+    margin:0 10px;
+}
+.sticker-card label {
+    font-size:14px;
+    color:#888;
+}
+.sticker-card input {
+    font-size:14px;
+    border:1px solid var(--gray-border);
+    border-radius:4px;
+    padding:5px 0 5px 5px;
+    width:100%;
+}
+.calculator-manager_data summary {
+    font-size:12px;
+    text-decoration:underline;
+    cursor:pointer;
+    color:var(--primary);
+}
+.calculator-manager_data details[open] summary {
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .grid-reviews {
+    grid-template-columns: 1fr; /* одна колонка */
+  }
+
+  .grid-reviews .w-inline-block {
+    width: 100%; /* растянуть на всю ширину */
+  }
+}

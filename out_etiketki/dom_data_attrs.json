@@ -1,0 +1,171 @@
+[
+  {
+    "tag": "HTML",
+    "attrs": {
+      "data-wf-page": "667bf9e5c4f6558a8cf9f116",
+      "data-wf-site": "667bf9e5c4f6558a8cf9f110"
+    }
+  },
+  {
+    "tag": "A",
+    "attrs": {
+      "data-b24-crm-button-widget": "openline_livechat"
+    }
+  },
+  {
+    "tag": "DIV",
+    "attrs": {
+      "data-b24-crm-button-icon": "crmform"
+    }
+  },
+  {
+    "tag": "DIV",
+    "attrs": {
+      "data-b24-crm-button-icon": "callback"
+    }
+  },
+  {
+    "tag": "DIV",
+    "attrs": {
+      "data-b24-crm-button-icon": "openline"
+    }
+  },
+  {
+    "tag": "DIV",
+    "attrs": {
+      "data-animation": "default",
+      "data-collapse": "medium"
+    }
+  },
+  {
+    "tag": "FORM",
+    "attrs": {
+      "data-name": "Search Form",
+      "data-wf-page-id": "667bf9e5c4f6558a8cf9f116",
+      "data-wf-element-id": "31645853-fc8d-cbe3-bc90-588ca01ed8fd"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "Search"
+    }
+  },
+  {
+    "tag": "A",
+    "attrs": {
+      "data-ix": "open-modal"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "Length"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "Quantity"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "Material",
+      "data-description": "Самоклеящаяся бумага Самоклеящаяся бумага"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "alcalc-cutter"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "alcalc-cutter"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "alcalc-cutter"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "alcalc-variable"
+    }
+  },
+  {
+    "tag": "FORM",
+    "attrs": {
+      "data-fetchit": "f8b07517a649b309354221447e4146f4",
+      "data-name": "Calculator"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "Priority"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-name": "Priority"
+    }
+  },
+  {
+    "tag": "TEXTAREA",
+    "attrs": {
+      "data-name": "Comment"
+    }
+  },
+  {
+    "tag": "SPAN",
+    "attrs": {
+      "data-error": "comment"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-wait": "Пожалуйста подождите..."
+    }
+  },
+  {
+    "tag": "A",
+    "attrs": {
+      "data-ix": "close-modal"
+    }
+  },
+  {
+    "tag": "FORM",
+    "attrs": {
+      "data-fetchit": "2ae359299a76ad213602d1188274439f",
+      "data-name": "Modal Form"
+    }
+  },
+  {
+    "tag": "TEXTAREA",
+    "attrs": {
+      "data-name": "Message"
+    }
+  },
+  {
+    "tag": "SPAN",
+    "attrs": {
+      "data-error": "message"
+    }
+  },
+  {
+    "tag": "INPUT",
+    "attrs": {
+      "data-wait": "Пожалуйста подождите..."
+    }
+  }
+]

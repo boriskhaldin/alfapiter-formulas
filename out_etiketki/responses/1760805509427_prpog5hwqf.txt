@@ -1,0 +1,3 @@
+URL: https://alfapiter.ru/assets/template/fonts/fontawesome-webfont.woff?v=4.7.0
+CT: text/html; charset=UTF-8
+

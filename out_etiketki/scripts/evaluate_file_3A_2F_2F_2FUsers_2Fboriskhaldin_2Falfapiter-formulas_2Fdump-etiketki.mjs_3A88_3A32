@@ -1,0 +1,13 @@
+(() => {
+    const out = [];
+    document.querySelectorAll('*').forEach(el=>{
+      const attrs={};
+      for (const a of el.attributes) {
+        if (a.name.startsWith('data-') && a.value && a.value.length > 5) attrs[a.name] = a.value;
+      }
+      if (Object.keys(attrs).length) out.push({tag:el.tagName, attrs});
+    });
+    return out;
+  }
+//# sourceURL=pptr:evaluate;file%3A%2F%2F%2FUsers%2Fboriskhaldin%2Falfapiter-formulas%2Fdump-etiketki.mjs%3A88%3A32
+)

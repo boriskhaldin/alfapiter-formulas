@@ -1,0 +1,781 @@
+URL: https://alfapiter.ru/calculators/etiketki
+CT: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html data-wf-page="667bf9e5c4f6558a8cf9f116" data-wf-site="667bf9e5c4f6558a8cf9f110">
+<head>
+        <meta charset="utf-8">
+    <base href="https://alfapiter.ru/" />
+    <title>Калькулятор расчета стоимости этикеток - "Альфа Питер" - универсальная типография СПб</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <meta name="wot-verification" content="ebe6900947fee8e34541"/>
+    <meta name='description' content='Калькулятор расчета стоимости этикеток - "Альфа Питер" - универсальная типография СПб'>
+    <meta name='keywords' content='типография, спб'>
+    <meta name="author" content=""/>
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    
+    <link rel="canonical" href="https://alfapiter.ru/calculators/etiketki" />
+    <!-- OG -->
+    <meta property="og:url" content='https://alfapiter.ru/calculators/etiketki'>
+    <meta property="og:type" content='website'>
+    <meta property="og:title" content='Этикетки'>
+    <meta property="og:image" content='https://alfapiter.ru/assets/og/og-image.jpg'>
+    <meta property="og:description" content='Калькулятор расчета стоимости этикеток - "Альфа Питер" - универсальная типография СПб'>
+    <meta property="og:site_name" content='"Альфа Питер" - универсальная типография СПб'>
+    <meta property="og:locale" content="ru_RU">
+    
+    <link href="assets/template/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="assets/template/css/webflow.css" rel="stylesheet" type="text/css">
+    <link href="assets/template/css/alfapiter.webflow.css?8" rel="stylesheet" type="text/css">
+    <link href="assets/template/css/custom.css?21" rel="stylesheet" type="text/css">
+    <!--link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"/-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"/>
+    <!-- Добавляем стили для уведомлений форм FetchIt  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"><script src="/assets/components/fetchit/js/fetchit.js?v=1.1.2" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:100,200,300,regular,500,600,700,800,900:cyrillic,latin"]  }});</script>
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <!-- добавляем иконки -->
+    <link rel="stylesheet" href="assets/template/css/font-awesome.min.css">
+    <!--script src="https://kit.fontawesome.com/83e2f36363.js" crossorigin="anonymous"></script-->
+    <link rel="icon" href="assets/template/images/favicon/favicon.svg" type="image/svg+xml">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(11822938, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        trackHash:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/11822938" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    
+</head>
+<body class="body">
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+    <div class="w-layout-blockcontainer container header w-container">
+      <div class="header">
+        <a href="/" aria-current="page" class="brand w-nav-brand w--current"><img src="assets/template/images/Logo-Alfapiter.svg" loading="lazy" alt="" class="logo-header"></a>
+        <div class="form-block w-form">
+            <form action="search" id="search" name="search" data-name="Search Form" method="get" class="form" data-wf-page-id="667bf9e5c4f6558a8cf9f116" data-wf-element-id="31645853-fc8d-cbe3-bc90-588ca01ed8fd">
+    <input id="search-field" class="serch-field w-input" maxlength="256" name="search" data-name="Search" placeholder="" type="text" id="search" value="">
+    <input type="hidden" name="id" value="92" />
+    <!--input type="submit" class="search-button w-inline-block" value="sisea.search" /--> 
+    <button class="search-button w-inline-block"><img src="assets/template/images/icon-search.svg" loading="lazy" alt=""></button>
+</form>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('search-field');
+    const placeholderTexts = ['Объемные наклейки...', 'Печать стикеров...', 'Печать баннеров...', 'Автовинил...', 'Лазерная резка...', 'Изготовление календарей...'];
+    let currentTextIndex = 0;
+    let charIndex = 0;
+    let typingSpeed = 100; // Скорость печатания (мс)
+    let delayBetweenTexts = 2000; // Задержка перед переключением текста (мс)
+    
+    function typePlaceholder() {
+        if (input.value.length === 0) { // Только если пользователь ничего не вводит
+            const currentText = placeholderTexts[currentTextIndex];
+            if (charIndex < currentText.length) {
+                input.placeholder += currentText[charIndex];
+                charIndex++;
+                setTimeout(typePlaceholder, typingSpeed);
+            } else {
+                // После завершения печатания подождать и начать следующий текст
+                setTimeout(() => {
+                    charIndex = 0;
+                    currentTextIndex = (currentTextIndex + 1) % placeholderTexts.length;
+                    input.placeholder = '';
+                    typePlaceholder();
+                }, delayBetweenTexts);
+            }
+        }
+    }
+
+    input.addEventListener('input', () => {
+        if (input.value.length > 0) {
+            input.placeholder = ''; // Убираем placeholder, если пользователь что-то вводит
+        } else {
+            charIndex = 0; // Сбрасываем индекс символа
+            input.placeholder = ''; // Очищаем placeholder
+            typePlaceholder(); // Запускаем анимацию
+        }
+    });
+
+    // Запускаем печатание текста при загрузке страницы
+    typePlaceholder();
+});
+</script>
+        </div>
+        <a href="#" class="header-button w-button" data-ix="open-modal">Онлайн заказ</a>
+        <div class="adress">
+          <a href="contact" class="adress-link">Санкт-Петербург, ул. Лабораторная, д.14Г</a>, <br>пн-пт с 10:00 до 18:00
+        </div>
+        <div class="header-socials">
+            
+            <a class="social-link" href="https://wa.me/79052113355?text=Обращение%20с%20сайта%20alfapiter.ru" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i></a>
+            
+            
+            
+            <a class="social-link" href="https://t.me/alfapiter_ru" target="_blank" rel="noopener noreferrer"><i class="fa fa-telegram"></i></a>
+            
+        </div>
+        <div class="header-contacts">
+          <a href="tel:+78123209545" class="phone-link">+7 (812) 320-95-45</a>
+          <a href="mailto:zakaz@alfapiter.ru" class="mail-link">zakaz@alfapiter.ru</a>
+        </div>
+        <div class="menu-button w-nav-button">
+          <div class="icon w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-wrap">
+      <div class="w-layout-blockcontainer container header w-container">
+        <nav role="navigation" class="nav-menu w-nav-menu">
+            <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
+                <div class="dropdown-toggle w-dropdown-toggle">
+                  <div class="menu-icon w-embed"><svg viewbox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="18" height="3" rx="1.5" fill="currentColor"></rect>
+                      <rect y="6" width="18" height="3" rx="1.5" fill="currentColor"></rect>
+                      <rect y="12" width="18" height="3" rx="1.5" fill="currentColor"></rect>
+                    </svg></div>
+                  <div>Вся продукция</div>
+                </div>
+                <nav class="dropdown-list w-dropdown-list"><a href="sticker" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-01.svg" loading="lazy" alt="" class="menu-icon"><div>Наклейки</div></a></li><a href="auto-sticker" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-02.svg" loading="lazy" alt="" class="menu-icon"><div>Автовинил</div></a></li><a href="outdoor-ad" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-03.svg" loading="lazy" alt="" class="menu-icon"><div>Наружная реклама</div></a></li><a href="wide-print" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-04.svg" loading="lazy" alt="" class="menu-icon"><div>Широкоформатная печать</div></a></li><a href="table" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-05.svg" loading="lazy" alt="" class="menu-icon"><div>Таблички</div></a></li><a href="polygraphy" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-06.svg" loading="lazy" alt="" class="menu-icon"><div>Полиграфия</div></a></li><a href="lazernaya-rezka-grafvirovk" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-07.svg" loading="lazy" alt="" class="menu-icon"><div>Лазер</div></a></li><a href="pechti-shtamp" class="dropdown-link w-inline-block" ><img src="assets/template/images/Service-icon-08.svg" loading="lazy" alt="" class="menu-icon"><div>Печати и штампы</div></a></li></nav>
+            </div>
+            <a href="calculators" class="nav-link w-nav-link">Онлайн калькуляторы</a><a href="texnologii-pechati" class="nav-link w-nav-link">Технологии печати</a><a href="about" class="nav-link w-nav-link">О компании</a><a href="news" class="nav-link w-nav-link">Новости</a><a href="contact" class="nav-link w-nav-link">Контакты</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+    <section class="breadcrumbs-section">
+    <div class="breadcrumbs"><div><a href="" class="previus">Главная</a></div><img src="assets/template/images/Divider-icon.svg" loading="lazy" alt="Разделитель" class="breadcrumbs-divider"><div><a href="calculators" class="previus">Онлайн калькуляторы</a></div><img src="assets/template/images/Divider-icon.svg" loading="lazy" alt="Разделитель" class="breadcrumbs-divider"><div>Этикетки</div></div>
+</section>
+    <!-- Калькулятор -->
+<section class="section">
+    <div class="w-layout-blockcontainer container w-container">
+        <h1 class="h2">Калькулятор бумажных наклеек/этикеток</h1>
+      <div class="calculator-form-block w-form">
+          <div class="w-layout-grid calculator-grid">
+            <div class="calculator-data">
+				<input type="hidden" name="calculator-usd" class="calculator-usd" value="80.9834"/>
+				<input type="hidden" name="calculator-eur" class="calculator-eur" value="94.5835"/>
+				<input type="hidden" name="dataLabelsArea[]" value="1.00"><input type="hidden" name="dataLabelsPrice[]" value="120.00"><input type="hidden" name="dataLabelsArea[]" value="20.00"><input type="hidden" name="dataLabelsPrice[]" value="60.00"><input type="hidden" name="dataLabelsArea[]" value="50.00"><input type="hidden" name="dataLabelsPrice[]" value="40.00"><input type="hidden" name="dataLabelsArea[]" value="300.00"><input type="hidden" name="dataLabelsPrice[]" value="28.00"><input type="hidden" name="dataLabelsArea[]" value="500.00"><input type="hidden" name="dataLabelsPrice[]" value="20.00">
+<input type="hidden" name="dataPrintArea[]" value="0.50"><input type="hidden" name="dataPrintPrice[]" value="13.30"><input type="hidden" name="dataPrintArea[]" value="1.00"><input type="hidden" name="dataPrintPrice[]" value="8.20"><input type="hidden" name="dataPrintArea[]" value="3.00"><input type="hidden" name="dataPrintPrice[]" value="7.00"><input type="hidden" name="dataPrintArea[]" value="10.00"><input type="hidden" name="dataPrintPrice[]" value="5.40"><input type="hidden" name="dataPrintArea[]" value="100.00"><input type="hidden" name="dataPrintPrice[]" value="3.80"><input type="hidden" name="dataPrintArea[]" value="200.00"><input type="hidden" name="dataPrintPrice[]" value="3.00">
+<input type="hidden" name="dataCutterArea[]" value="1.00"><input type="hidden" name="dataCutterPrice[]" value="6.67"><input type="hidden" name="dataCutterArea[]" value="5.00"><input type="hidden" name="dataCutterPrice[]" value="3.33"><input type="hidden" name="dataCutterArea[]" value="150.00"><input type="hidden" name="dataCutterPrice[]" value="1.80">
+<input type="hidden" name="dataManualArea[]" value="10.00"><input type="hidden" name="dataManualPrice[]" value="30.00"><input type="hidden" name="dataManualArea[]" value="100.00"><input type="hidden" name="dataManualPrice[]" value="20.00"><input type="hidden" name="dataManualArea[]" value="500.00"><input type="hidden" name="dataManualPrice[]" value="10.00">
+<input type="hidden" name="dataMountArea[]" value="1.00"><input type="hidden" name="dataMountPrice[]" value="200.00"><input type="hidden" name="dataMountArea[]" value="100.00"><input type="hidden" name="dataMountPrice[]" value="50.00">
+<input type="hidden" name="dataPreparationArea[]" value="1.00"><input type="hidden" name="dataPreparationPrice[]" value="200.00"><input type="hidden" name="dataPreparationArea[]" value="100.00"><input type="hidden" name="dataPreparationPrice[]" value="100.00">
+
+                <div class="alcalc-size-list">
+<div class="calculator-form-block">
+<div>Размеры</div>
+    <div class="w-layout-grid numb-wrap">
+    	<div class="numb-input-wrap">
+    		<label for="width" class="input-label">Ширина </label>
+    		<input class="numb-input w-input" value="30" min="0" name="width" data-name="Width" placeholder="" type="number" id="alcalc-width">
+    		<label for="width" class="input-label">мм</label>
+    		
+    		<input class="alcalc-max-width" type="hidden" value="99999"/>
+    	</div>
+        <div class="numb-input-wrap">
+    		<label for="length" class="input-label">Длина</label>
+    		<input class="numb-input w-input" value="50" min="0" name="length" data-name="Length" placeholder="" type="number" id="alcalc-length">
+    		<label for="length" class="input-label">мм</label>
+    		
+    		<input class="alcalc-max-length" type="hidden" value="99999"/>
+    	</div>
+    </div>
+</div>
+<div class="calculator-form-block">
+    <div>Количество</div>
+    <div class="w-layout-grid numb-wrap">
+      <div class="numb-input-wrap ">
+    	  <label for="types" class="input-label">Видов</label>
+    	  <input class="numb-input w-input" value="1" min="0" name="types" data-name="Types" placeholder="" type="number" id="alcalc-types">
+    	  <label for="types" class="input-label">шт</label>
+      </div>
+      <div class="numb-input-wrap">
+    	  <label for="quantity" class="input-label">Тираж</label>
+    	  <input class="numb-input w-input" value="1000" min="0" name="quantity" data-name="Quantity" placeholder="" type="number" id="alcalc-circulation">
+    	  <label for="quantity" class="input-label">шт</label>
+      </div>
+      
+    </div>
+</div>
+
+<div class="calculator-form-block">
+    <button type="button" class="remove-size-btn">Удалить блок</button>
+  </div>
+</div>
+<button id="alcalc-add-size" type="button" class="add-size-btn ">+ Добавить ещё размер</button>
+
+                              <div class="calculator-form-block hide">
+				<div>Материал</div>
+                <div class="w-layout-grid form-select-2-col alcalc-material">
+                    <label class="radio w-radio selected">
+    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio_button w-radio-input"></div>
+    <input type="radio" name="material" id="material-1" data-name="Material" style="opacity:0;position:absolute;z-index:-1" value="35.00" data-type="lab" data-currency="3" data-description="Самоклеящаяся бумага Самоклеящаяся бумага" checked data-picture="" data-cutting="1.000" data-engraving="1.000">
+    <span class="radio-button-label w-form-label" for="material-1">Самоклеящаяся бумага</span>
+</label>
+				</div>
+                <div class="material-description ">
+                    
+                            <div class="description-heading">Описание материала</div>
+                            <div class="description-text">ORAJET_3640 Самоклеящаяся белая пленка (Германия) 80мк постоянный клей</div>
+                    
+                </div>
+              </div>
+
+                              <div class="calculator-form-block ">
+				<div>Сложность контура</div>
+                <div class="w-layout-grid form-select-3-col">
+				  <label for="alcalc-cutter-1" class="alcalc-cutter radio w-radio selected">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio_button w-radio-input"></div>
+					<input type="radio" name="alcalc-cutter" id="alcalc-cutter-1" data-name="alcalc-cutter" style="opacity:0;position:absolute;z-index:-1" value="1" >
+                    <div class="calculator-form-icon w-embed">
+						<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="currentColor"></path>
+						</svg>
+					</div>
+					<span class="radio-button-label w-form-label" for="alcalc-cutter-1">Простой</span>
+                  </label>
+				  <label for="alcalc-cutter-2" class="alcalc-cutter radio w-radio ">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio_button w-radio-input"></div>
+					<input type="radio" name="alcalc-cutter" id="alcalc-cutter-2" data-name="alcalc-cutter" style="opacity:0;position:absolute;z-index:-1" value="1.5" >
+                    <div class="calculator-form-icon w-embed">
+					  <svg viewbox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8795 6.66049L12.0001 0L8.1207 6.66049L0.587402 8.2918L5.72311 14.0395L4.94666 21.7082L12.0001 18.6L19.0535 21.7082L18.2771 14.0395L23.4128 8.2918L15.8795 6.66049ZM19.6335 9.51976L14.5948 8.42866L12.0001 3.97378L9.40535 8.42866L4.36669 9.51976L7.80171 13.3641L7.28238 18.4934L12.0001 16.4144L16.7178 18.4934L16.1984 13.3641L19.6335 9.51976Z" fill="currentColor"></path>
+                      </svg>
+					</div>
+					<span class="radio-button-label w-form-label" for="alcalc-cutter-2">Сложный</span>
+                  </label>
+
+				  <label for="alcalc-cutter-3" class="alcalc-cutter radio w-radio hide">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio_button w-radio-input"></div>
+					<input type="radio" name="alcalc-cutter" id="alcalc-cutter-3" data-name="alcalc-cutter" style="opacity:0;position:absolute;z-index:-1" value="0">
+                    <div class="calculator-form-icon w-embed">
+					  <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM22 12C22 17.5228 17.5228 22 12 22C9.47125 22 7.16173 21.0614 5.40082 19.5135L19.5135 5.40082C21.0614 7.16173 22 9.47125 22 12ZM4.03658 18.0494L18.0494 4.03658C16.3697 2.75864 14.2734 2 12 2C6.47715 2 2 6.47715 2 12C2 14.2734 2.75864 16.3697 4.03658 18.0494Z" fill="currentColor"></path>
+                      </svg>
+					</div>
+					<span class="radio-button-label w-form-label" for="alcalc-cutter-3">Без резки</span>
+                  </label>
+				</div>
+              </div>
+                
+                  <div class="calculator-form-block "><label for="Select-3">Переменные данные</label>
+    <div class="w-layout-grid form-select-2-col">
+      <label for="alcalc-variable" class="w-checkbox checkbox-field">
+        <div class="checkbox-text">Переменные данные</div>
+        <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+        <input type="checkbox" id="alcalc-variable" name="alcalc-variable" data-name="alcalc-variable" style="opacity:0;position:absolute;z-index:-1">
+        <span class="hide w-form-label" for="alcalc-angle">Сложный контур</span>
+      </label>
+    </div>
+  </div>
+                
+             
+            </div>
+            <div class="calculator-order">
+    <form data-fetchit="f8b07517a649b309354221447e4146f4" action="calculators/etiketki" id="calculator" name="calculator" data-name="Calculator" method="post" class="form-with-validation" enctype="multipart/form-data">
+	<div class="w-layout-grid sum">
+		<div class="calculator-form-block alcalc-timing">
+		  <div>Срок выполнения заказа</div>
+		  <div class="w-layout-grid form-select-2-col">
+			<label class="radio selected w-radio">
+			  <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio_button w-radio-input"></div>
+			  <input type="radio" name="priority" id="priority-1" data-name="Priority" style="opacity:0;position:absolute;z-index:-1" value="1">
+			  <span class="radio-button-label w-form-label" for="priority-1">Обычный заказ</span>
+			  <small class="priority-text">3-4 рабочих дня</small>
+			</label>
+			<label class="radio w-radio fast-order">
+              <div class="radio-left">
+                <span class="tooltip-icon">i</span>
+                <div class="tooltip-text">По согласованию с производством</div>
+              </div>
+              <div class="radio-right">
+                <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio_button w-radio-input"></div>
+                <input type="radio" name="priority" id="priority-2" data-name="Priority" style="opacity:0;position:absolute;z-index:-1" value="1.5">
+                <span class="radio-button-label w-form-label" for="priority-2">Срочный заказ</span>
+                <small class="priority-text">от 1 дня</small>
+              </div>
+            </label>
+		  </div>
+		</div>
+		
+		<div class="calculator-result_data"></div>
+		
+		<div class="calculator-result_total" style="display: none;">
+			<div class="calculator-result_total_heading">Итого:</div>
+			<div class="calculator-result_total_digit"><output id="alcalc-result_total">0</output> ₽</div>
+		</div>
+		<div class="sum-wrap">
+		  <div class="sum-text">Итого:</div>
+		  <div class="sum-text alcalc-result" id="alcalc-result">0</div>
+		  <div class="sum-text">₽</div>
+		</div>
+	</div>
+	<div class="w-layout-grid calculator-contact">
+		<div>
+			<label for="name">Имя</label>
+			<input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" value="" required>
+			<span data-error="name"></span>
+			<label for="email">Email</label>
+			<input class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" value="" required>
+			<span data-error="email"></span>
+			<label for="phone">Телефон</label>
+			<input class="text-field w-input" maxlength="256" name="phone" data-name="Phone" placeholder="" type="tel" value="" required data-tel-input>
+			<span data-error="phone"></span> 
+		</div>
+		<div style="display: none;">
+				<input type="hidden" name="alcalc-form-price" class="alcalc-form-price" value="">
+				<input type="hidden" name="alcalc-form-width" class="alcalc-form-width" value="">
+				<input type="hidden" name="alcalc-form-length" class="alcalc-form-length" value="">
+				<input type="hidden" name="alcalc-form-circulation" class="alcalc-form-circulation" value="">
+				<input type="hidden" name="alcalc-form-types" class="alcalc-form-types" value="">
+				<input type="hidden" name="alcalc-form-cutter" class="alcalc-form-cutter" value="">
+				<input type="hidden" name="alcalc-form-manual" class="alcalc-form-manual" value="">
+				<input type="hidden" name="alcalc-form-mount" class="alcalc-form-mount" value="">
+				<input type="hidden" name="alcalc-form-variable" class="alcalc-form-variable" value="">
+				<input type="hidden" name="alcalc-form-cylinder" class="alcalc-form-cylinder" value="">
+				<input type="hidden" name="alcalc-form-dpi" class="alcalc-form-dpi" value="">
+				<input type="hidden" name="alcalc-form-angle" class="alcalc-form-angle" value="">
+				<input type="hidden" name="alcalc-form-material" class="alcalc-form-material"
+					   value="ORAJET_3640 Самоклеящаяся белая пленка (Германия) 80мк постоянный клей">
+				<input type="hidden" name="alcalc-form-material-lamination-1" class="alcalc-form-material-lamination-1" value="">
+				<input type="hidden" name="alcalc-form-material-table" class="alcalc-form-material-table" value="">
+				<input type="hidden" name="alcalc-form-material-laser" class="alcalc-form-material-laser" value="">
+				<input type="hidden" name="alcalc-form-labels-pages" class="alcalc-form-labels-pages" value="">
+				<input type="hidden" name="alcalc-form-usd" class="alcalc-form-usd" value="">
+				<input type="hidden" name="alcalc-form-eur" class="alcalc-form-eur" value="">
+		</div>
+		<div>
+			<label for="comment">Комментарии к заказу</label>
+			<textarea placeholder="" maxlength="5000" id="comment" name="comment" data-name="Comment" class="textarea w-input"></textarea>
+			<span data-error="comment"></span>
+			<div class="form-btn-wrapper">
+				  <label for="files" class="file-upload w-inline-block">
+                    <div class="plus-icon">+</div>
+                    <div>Загрузить файл</div>
+                  </label>
+				  <input type="file" name="files[]" accept=".jpg,.png,.pdf,.docx,.svg,.ai,.cdr,.eps" multiple style="display:none;">
+                  <ul class="file-list"></ul>
+			</div>
+			<a href="specification" target="_blank" class="link-block w-inline-block">
+				<div class="requirements-link">Требования к макету</div>
+			</a>
+		</div>
+	</div>
+	<div class="submit-wrap"><input type="submit" data-wait="Пожалуйста подождите..." class="submit-button w-button" value="Заказать">
+	<p class="privacy-text">
+      Отправляя заявку, вы соглашаетесь с 
+      <a href="policy" target="_blank">политикой обработки данных</a> и 
+      <a href="privacy" target="_blank">политикой конфиденциальности</a>.
+    </p>
+	</div>
+</form>
+<div class="success-message w-form-done">
+  <div>Спасибо! Ваше сообщение успешно отправлено!</div>
+</div>
+<div class="w-form-fail">
+  <div>Упс! Что-то пошло не так, попробуйте еще раз позже.</div>
+</div>
+</div>
+          </div>
+      </div>
+    </div>
+</section>
+<script>
+    window.pluginVersion = "v=104001102025";
+
+    // динамическая вставка модулей
+    const version = window.pluginVersion;
+
+    const scripts = [
+        "assets/template/js/calculator.functions.plugin.js",
+        "assets/template/js/calculator-labels.plugin.js"
+    ];
+
+    scripts.forEach(src => {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = `${src}?${version}`;
+        document.head.appendChild(script);
+    });
+
+    // путь для дальнейшего использования
+    window.pathImportForDefault = `./calculator-labels.plugin.js?${version}`;
+</script>
+    <section class="section review-block">
+    <div class="w-layout-blockcontainer container w-container">
+        <div class="w-layout-grid grid-reviews">
+            <div class="w-inline-block">
+                <div style="width:100%;height:500px;overflow:hidden;position:relative;margin:auto;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/26973230264?comments"></iframe><a href="https://yandex.ru/maps/org/alfa_piter/26973230264/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Альфа Питер на карте Санкт‑Петербурга — Яндекс Карты</a></div>
+            </div>
+            <div class="w-inline-block">
+                <h3>Нам доверяют</h3>
+                <p>Читайте отзывы клиентов и убедитесь в надёжности наших услуг.
+                Оставьте свой отзыв и поделитесь своим опытом сотрудничества.</p>
+                <img class="good-place" src="assets/template/images/yandex_place.png" alt="Хорошее место 2024"/>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="w-layout-blockcontainer container-footer w-container">
+      <div class="w-layout-grid grid-footer">
+        <div class="footer-column"><img src="assets/template/images/alfa-logo-vertical.svg" loading="lazy" alt="" class="footer-logo">
+          <div class="footer-text">© 2001-2025 «Альфа Питер»</div>
+          <a href="tel:+78123209545" class="footer-contact">+7 (812) 320-95-45</a>
+          <a href="tel:+78123093399" class="footer-contact">+7 (812) 309-33-99</a>
+          <a href="tel:+79052113355" class="footer-contact">+7 (905) 211-33-55</a>
+          <a href="mailto:zakaz@alfapiter.ru?subject=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" class="footer-contact">zakaz@alfapiter.ru</a>
+          <div class="social-wrap">
+            
+            <a class="social-link" href="https://vk.com/alfa_piter" target="_blank" rel="noopener noreferrer"><i class="fa fa-vk"></i></a>
+            
+            
+            <a class="social-link" href="https://www.instagram.com/alfapiter.ru" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+            
+            
+            <a class="social-link" href="https://wa.me/79052113355?text=Обращение%20с%20сайта%20alfapiter.ru" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i></a>
+            
+            
+            
+            <a class="social-link" href="https://t.me/alfapiter_ru" target="_blank" rel="noopener noreferrer"><i class="fa fa-telegram-plane"></i></a>
+            
+          </div>
+        </div>
+        <div class="footer-column">
+          <a href="https://alfapiter.ru/" class="footer-link">Главная</a>
+          <a href="services" class="footer-link">Вся продукция</a>
+          <a href="calculators" class="footer-link">Онлайн калькуляторы</a>
+          <a href="texnologii-pechati" class="footer-link">Технологии печати</a>
+          <a href="news" class="footer-link">Новости</a>
+          <a href="specification" class="footer-link">Требования к макетам</a>
+          <a href="faq" class="footer-link">Часто задаваемые вопросы</a>
+          <a href="contact" class="footer-link">Контакты</a>
+          <a href="auth" class="footer-link">Личный кабинет</a>
+        </div>
+        <div id="w-node-_2160e7ef-16d6-147c-a7e3-3ba973f43d19-73f43cf6" class="footer-column">
+            <a href="texnologii-pechati" class="footer-link">Технологии печати</a>
+            <a href="texnologii-pechati/wide-print" class="footer-sublink">Широкоформатная печать</a><a href="texnologii-pechati/cutter" class="footer-sublink">Плоттерная резка</a><a href="texnologii-pechati/digital" class="footer-sublink">Цифровая печать</a><a href="texnologii-pechati/risograph" class="footer-sublink">Ризография</a><a href="texnologii-pechati/lamination" class="footer-sublink">Ламинирование</a><a href="texnologii-pechati/post-print" class="footer-sublink">Послепечатная обработка</a><a href="texnologii-pechati/termotransfer" class="footer-sublink">Термотрансфер</a><a href="texnologii-pechati/laser" class="footer-sublink">Лазерная резка и гравировка</a>
+            <a href="lazernaya-rezka-grafvirovk" class="footer-link">Лазерная резка и гравировка</a>
+            <a href="lazernaya-rezka-grafvirovk/lazernaya-graviroka-suvenirov" class="footer-sublink">Гравировка сувениров</a><a href="lazernaya-rezka-grafvirovk/lazernaya-rezk-nomerkov" class="footer-sublink">Резка номерков</a><a href="lazernaya-rezka-grafvirovk/lazernaya-rezka-i-gravirovka-derev" class="footer-sublink">Резка и гравировка дерева</a><a href="lazernaya-rezka-grafvirovk/lazernaya-markirovka" class="footer-sublink">Маркировка</a><a href="lazernaya-rezka-grafvirovk/lazernaya-markirovka-shildov" class="footer-sublink">Лазерная маркировка шильдов</a>
+        </div>
+        <div id="w-node-_2160e7ef-16d6-147c-a7e3-3ba973f43d30-73f43cf6" class="footer-column">
+          <a href="sticker" class="footer-link">Наклейки</a>
+            <a href="sticker/stickers" class="footer-sublink">Виниловые</a><a href="sticker/volumetric" class="footer-sublink">Объемные</a><a href="sticker/label" class="footer-sublink">Этикетки</a><a href="sticker/magnetic" class="footer-sublink">Магнитные</a><a href="sticker/bumazhnyie" class="footer-sublink">Бумажные</a><a href="sticker/floor" class="footer-sublink">На пол</a><a href="sticker/window" class="footer-sublink">На стекло</a><a href="sticker/wall" class="footer-sublink">На стены</a><a href="sticker/destroy" class="footer-sublink">Саморазрушающиеся</a><a href="sticker/reflective" class="footer-sublink">Светоотражающие</a><a href="sticker/s-peremennyimi-dannyimi" class="footer-sublink">С переменными данными</a><a href="sticker/stikerpaki" class="footer-sublink">Стикерпаки</a>
+          <a href="auto-sticker" class="footer-link">Автовинил</a>
+            <a href="auto-sticker/reklama" class="footer-sublink">Рекламные</a><a href="auto-sticker/kapot" class="footer-sublink">На капот и борт</a><a href="auto-sticker/steklo" class="footer-sublink">На стекло</a><a href="auto-sticker/army" class="footer-sublink">Камуфляж</a><a href="auto-sticker/reflect" class="footer-sublink">Светоотражающий</a><a href="auto-sticker/9may" class="footer-sublink">К 9 мая</a>
+        </div>
+        <div id="w-node-_2160e7ef-16d6-147c-a7e3-3ba973f43d59-73f43cf6" class="footer-column">
+          <a href="outdoor-ad" class="footer-link">Наружная реклама</a>
+            <a href="outdoor-ad/banneryi" class="footer-sublink">Баннеры</a><a href="outdoor-ad/mob-stands" class="footer-sublink">Мобильные стенды</a><a href="outdoor-ad/streetline" class="footer-sublink">Стритлайны</a><a href="outdoor-ad/info-stands" class="footer-sublink">Информационные стенды</a><a href="outdoor-ad/sales" class="footer-sublink">Оформление магазинов</a><a href="outdoor-ad/road-sign" class="footer-sublink">Дорожные знаки</a><a href="outdoor-ad/tshirt" class="footer-sublink">Печать на одежде</a><a href="outdoor-ad/boat-number" class="footer-sublink">Номера на лодки</a>
+          <a href="wide-print" class="footer-link">Широкоформатная печать</a>
+            <a href="wide-print/banner" class="footer-sublink">На баннере</a><a href="wide-print/plenka" class="footer-sublink">На пленке</a><a href="wide-print/paper" class="footer-sublink">На бумаге</a><a href="wide-print/backlit" class="footer-sublink">На бэклите</a><a href="wide-print/canvas" class="footer-sublink">На холсте</a><a href="wide-print/wallpaper" class="footer-sublink">Фотообои</a><a href="wide-print/drawings" class="footer-sublink">Печать чертежи</a>
+        </div>
+        <div id="w-node-_2160e7ef-16d6-147c-a7e3-3ba973f43d80-73f43cf6" class="footer-column">
+          <a href="table" class="footer-link">Таблички</a>
+            <a href="table/tablichki-iz-plastika" class="footer-sublink">Из пластика</a><a href="table/tablichki-iz-orgstekla" class="footer-sublink">Из оргстекла</a><a href="table/tablichki-iz-kompozita" class="footer-sublink">Из композита</a><a href="table/tablichki-iz-profilya" class="footer-sublink">Из профиля</a><a href="table/tablichki-s-obemnyimi-bukvami" class="footer-sublink">С объемными буквами</a><a href="table/tablichki-iz-dereva" class="footer-sublink">Из дерева и фанеры</a><a href="table/s-gravirovkoj" class="footer-sublink">С гравировкой</a><a href="table/stencil" class="footer-sublink">Трафареты</a>
+          <a href="polygraphy" class="footer-link">Полиграфия</a>
+            <a href="polygraphy/catalog" class="footer-sublink">Каталоги</a><a href="polygraphy/listovki-blanki" class="footer-sublink">Листовки, бланки, флаеры</a><a href="polygraphy/vizitki" class="footer-sublink">Визитки</a><a href="polygraphy/poster" class="footer-sublink">Плакаты</a><a href="polygraphy/calendar" class="footer-sublink">Календари</a><a href="polygraphy/pechat-priglashenij" class="footer-sublink">Приглашения, открытки</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <div class="calc-widget-button-wrapper">
+    <div class="calc-widget-button-inner-container">
+        <div class="calc-widget-button-block">
+            <a href="calculators" class="calc-widget-button-inner-block">
+                <img src="assets/template/images/Calc-icon.svg" loading="lazy" alt="" class="calc-widget-button-icon">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="modal-form-wrap">
+    <a href="#" class="close-link" data-ix="close-modal">╳</a>
+    <div class="w-layout-blockcontainer container w-container">
+      <h2 class="h2-main">Онлайн заказ</h2>
+      <div class="w-form">
+        <div class="w-form">
+<form data-fetchit="2ae359299a76ad213602d1188274439f" action="calculators/etiketki" name="modal-form" data-name="Modal Form" method="post" class="form-with-validation"  enctype="multipart/form-data">
+  <div class="w-layout-grid form-grid">
+    <div>
+        <label for="name">Имя</label>
+        <input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" value="" required>
+        <span data-error="name"></span>
+        <label for="email">Email</label>
+        <input class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" value="" required>
+        <span data-error="email"></span>
+        <label for="phone">Телефон</label>
+        <input class="text-field w-input" maxlength="256" name="phone" data-name="Phone" placeholder="" type="tel" value="" required data-tel-input>
+        <span data-error="phone"></span> 
+    </div>
+    <div>
+        <label for="message">Сообщение</label>
+        <textarea placeholder="Комментарии к заказу" maxlength="5000" name="message" data-name="Message" class="textarea w-input"></textarea>
+        <span data-error="message"></span>
+        <div class="home-form-btn-wrapper">
+            <div class="file-upload-wrapper">
+                <label for="files" class="file-upload w-inline-block">
+                    <div class="plus-icon">+</div>
+                    <div>Загрузить файл</div>
+                </label>
+                <input type="file" name="files[]" accept=".jpg,.png,.pdf,.docx,.svg,.ai,.cdr,.eps,.tiff" multiple style="display:none;">
+                <ul class="file-list"></ul>
+            </div>
+            <p class="privacy-text">Отправляя заявку вы даете своё <a href="policy">согласие на обработку персональных данных</a>.</p>
+            <input type="submit" data-wait="Пожалуйста подождите..." class="submit-button w-button" value="Отправить">
+        </div>
+    </div>
+  </div>
+</form>
+<div class="success-message w-form-done">
+  <div>Спасибо! Ваше сообщение успешно отправлено!</div>
+</div>
+<div class="w-form-fail">
+  <div>Упс! Что-то пошло не так, попробуйте еще раз позже.</div>
+</div>
+</div>
+      </div>
+    </div>
+</div>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<script src="assets/template/js/webflow.js" type="text/javascript"></script>
+<!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script-->
+<script type="text/javascript" src="assets/template/js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="assets/template/js/phoneinput.js"></script>
+<script type="text/javascript" src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    $('[data-fancybox]').fancybox({
+        buttons: [
+            'zoom',
+            'download',
+            'close'
+        ],
+        lang: 'ru', // Указываем язык
+        i18n: {
+            ru: {
+                CLOSE: 'Закрыть',
+                NEXT: 'Следующее',
+                PREV: 'Предыдущее',
+                ERROR: 'Не удалось загрузить контент. <br/> Пожалуйста, попробуйте позже.',
+                PLAY_START: 'Начать слайд-шоу',
+                PLAY_STOP: 'Остановить слайд-шоу',
+                FULL_SCREEN: 'На весь экран',
+                THUMBS: 'Превью',
+                DOWNLOAD: 'Скачать',
+                SHARE: 'Поделиться',
+                ZOOM: 'Увеличить'
+            }
+        },
+        // Настройка заголовка
+        caption: function (instance, item) {
+            return $(this).data('caption') || '';
+        }
+    });
+});
+</script>
+
+<!--  calculator custom radio btn  -->
+<script>
+    $('.radio').click(function() {
+        // Найдем input внутри текущего .radio
+        var $radioInput = $(this).find('input[type="radio"]');
+    
+        // Проверим, что радио было выбрано
+        if ($radioInput.is(':checked')) {
+            // Удалим класс 'selected' у всех радио с таким же name
+            $('input[name="' + $radioInput.attr('name') + '"]').closest('.radio').removeClass('selected');
+            
+            // Добавим класс 'selected' к текущему радио
+            $(this).addClass('selected');
+        }
+    });
+
+</script>
+
+<!--  masonry grid  -->
+<script>
+    // #photo-gallery
+    var $container = $('#photo-gallery').imagesLoaded( function() {
+        let filterButton = $('.filter-button');
+        if($('.item').length>10) {
+            filterButton.show();
+        } else {
+            filterButton.hide();
+        }
+    	$container.isotope({
+    	  // options
+    	  itemSelector: '.item',
+    	  layoutMode: 'masonry',
+    	  filter: '.ten'
+    	});
+    	
+        // filter items on button click
+        filterButton.on( 'click', 'button', function() {
+          var filterValue = $(this).attr('data-filter');
+          $container.isotope({ filter: filterValue });
+          filterButton.hide();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        // Подключаем Isotope к #video-gallery
+        var $videoContainer = $('#video-gallery').imagesLoaded(function () {
+            $videoContainer.isotope({
+                itemSelector: '.item', // Класс элементов для сортировки
+                layoutMode: 'masonry'       // Режим раскладки
+            });
+        });
+    });
+</script>
+
+<!-- Добавляем уведомления для форм FetchIt  -->
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const notyf = new Notyf();
+    
+      FetchIt.Message = {
+        success(message) {
+          notyf.success(message);
+        },
+        error(message) {
+          notyf.error(message);
+        },
+      }
+    });
+</script>
+<!-- антиспам -->
+<script>
+    $(function(){
+        // Антиспам
+        $('.form-with-validation').append('<input type="text" name="org" value="" class="_org" style="visability:hidden; height: 0; width: 0; padding: 0; border:none;"/>')
+        // Антиспам х  
+    })
+</script>
+<!-- скрываем форму и показываем сообщение, что все класс -->
+<script>
+    document.addEventListener('fetchit:success', (e) => {
+        const { form, response } = e.detail;
+        const nextElement = form.nextElementSibling;
+        if (nextElement && nextElement.classList.contains('w-form-done')) {
+            nextElement.style.display = 'block';
+        } else {
+          // Следующего элемента с классом desired-class нет
+        }
+        // Скрываем форму
+        form.style.display = 'none';
+        // Получаем элемент блока с классом message w-form-done
+        console.log(response);
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const forms = document.querySelectorAll('form.form-with-validation');
+
+  forms.forEach(function(form) {
+    const fileInput = form.querySelector('input[type="file"]');
+    const fileListElement = form.querySelector('.file-list');
+    const selectedFiles = [];
+
+    // Клик по кнопке "Загрузить файл"
+    form.querySelector('.file-upload').addEventListener('click', function () {
+      fileInput.click();
+    });
+
+    // При выборе файлов
+    fileInput.addEventListener('change', function (event) {
+      const newFiles = Array.from(event.target.files);
+
+      newFiles.forEach(file => {
+        if (!selectedFiles.some(f => f.name === file.name && f.size === file.size)) {
+          selectedFiles.push(file);
+        }
+      });
+
+      updateFileList();
+      fileInput.value = ''; // позволяет повторно выбрать один и тот же файл
+    });
+
+    // Обновление отображения списка файлов
+    function updateFileList() {
+      fileListElement.innerHTML = '';
+
+      selectedFiles.forEach((file, index) => {
+        const li = document.createElement('li');
+        li.textContent = file.name;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Удалить';
+        deleteButton.classList.add('delete-file');
+        deleteButton.setAttribute('type', 'button'); // важно, чтобы не отправляло форму
+        deleteButton.dataset.index = index;
+
+        deleteButton.addEventListener('click', function () {
+          selectedFiles.splice(index, 1);
+          updateFileList();
+        });
+
+        li.appendChild(deleteButton);
+        fileListElement.appendChild(li);
+      });
+
+      fileInput.files = createFileList(selectedFiles);
+    }
+
+    // Создание FileList из массива
+    function createFileList(filesArray) {
+      const dataTransfer = new DataTransfer();
+      filesArray.forEach(file => dataTransfer.items.add(file));
+      return dataTransfer.files;
+    }
+
+    // Добавляем временные input перед submit
+    form.addEventListener('submit', function(e) {
+      selectedFiles.forEach(file => {
+        const tempInput = document.createElement('input');
+        tempInput.type = 'file';
+        tempInput.name = fileInput.name;
+        tempInput.files = createFileList([file]);
+        tempInput.style.display = 'none';
+        form.appendChild(tempInput);
+      });
+    });
+  });
+});
+</script>
+<!-- BITRIX24 -->
+<script>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b5241835/crm/site_button/loader_2_g0akwi.js');
+</script>
+<!-- Parse time: 0.1144 s - 0.0130 s - 145 -->
+<script>window.addEventListener('DOMContentLoaded', () => FetchIt.create({"action":"f8b07517a649b309354221447e4146f4","assetsUrl":"\/assets\/components\/fetchit\/","actionUrl":"\/assets\/components\/fetchit\/action.php","inputInvalidClass":"is-invalid","customInvalidClass":"","clearFieldsOnSuccess":true,"defaultNotifier":false,"pageId":120}));</script>
+<script>window.addEventListener('DOMContentLoaded', () => FetchIt.create({"action":"2ae359299a76ad213602d1188274439f","assetsUrl":"\/assets\/components\/fetchit\/","actionUrl":"\/assets\/components\/fetchit\/action.php","inputInvalidClass":"is-invalid","customInvalidClass":"","clearFieldsOnSuccess":true,"defaultNotifier":false,"pageId":120}));</script>
+</body>
+</html>

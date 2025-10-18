@@ -1,0 +1,1 @@
+window.addEventListener('DOMContentLoaded', () => FetchIt.create({"action":"2ae359299a76ad213602d1188274439f","assetsUrl":"\/assets\/components\/fetchit\/","actionUrl":"\/assets\/components\/fetchit\/action.php","inputInvalidClass":"is-invalid","customInvalidClass":"","clearFieldsOnSuccess":true,"defaultNotifier":false,"pageId":120}));
