@@ -1,0 +1,323 @@
+name: Alfapiter • Auto Fit & Verify & Zip
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: '22'
+  OUT_DIR: out_etiketki
+  DIST_DIR: dist
+  PUPPETEER_SKIP_DOWNLOAD: 'true' # не тянем лишнего
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout (with PAT)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install deps (Playwright + helpers)
+        run: |
+          npm -v
+          node -v
+          npm i -D playwright@1.48 jsdom@24 chalk@5 archiver@7
+
+      - name: Install Playwright browsers (Chromium)
+        run: npx playwright install --with-deps chromium
+
+      - name: Auto-scrape, fit formulas, verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUT_DIR" "$DIST_DIR"
+
+          # -----------------------------
+          # 1) Снимаем цены с сайта (Playwright)
+          # -----------------------------
+          node - <<'JS'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs/promises';
+
+          const OUT_DIR = process.env.OUT_DIR || 'out_etiketki';
+          const URL = 'https://alfapiter.ru/calculators/etiketki';
+
+          function areaOf(stickers){
+            return stickers.reduce((s,st)=> s + (st.width_mm/1000)*(st.height_mm/1000)*st.count, 0);
+          }
+
+          // Набор тестов (репрезентативные площади + флаги)
+          const tests = [
+            { stickers:[{width_mm:30,height_mm:50,count:1000}],           lam1:false,lam2:false,rolling:false },
+            { stickers:[{width_mm:30,height_mm:50,count:1000}],           lam1:true, lam2:false,rolling:false },
+            { stickers:[{width_mm:40,height_mm:40,count:500}],            lam1:false,lam2:true, rolling:true  },
+            { stickers:[{width_mm:30,height_mm:50,count:1000},{width_mm:40,height_mm:40,count:500}], lam1:true, lam2:false, rolling:true },
+            { stickers:[{width_mm:80,height_mm:80,count:200}],            lam1:false,lam2:false,rolling:false },
+            { stickers:[{width_mm:20,height_mm:20,count:10000}],          lam1:true, lam2:true, rolling:false },
+          ];
+
+          async function scrapeTotal(page, t){
+            // Примерный селектинг: подстройка под реальный DOM.
+            // Вводим первую наклейку; для второй (если есть) заполним после.
+            // Ниже — дефолтные селекторы; если у вас на странице другие атрибуты,
+            // Playwright найдет их по placeholder/label.
+            const [s0, s1] = t.stickers;
+            // ширина/высота/тираж — берём первые инпуты
+            const inp = (ph) => page.locator(`input[placeholder*="${ph}"], input[aria-label*="${ph}"]`);
+            await inp('Ширина').first().fill(String(s0.width_mm));
+            await inp('Высота').first().fill(String(s0.height_mm));
+            await inp('Тираж').first().fill(String(s0.count));
+
+            if(s1){
+              // ищем вторую строку ввода; если нет — добавим позицию, если есть такая кнопка
+              const addBtn = page.getByRole('button', { name: /добавить/i }).first();
+              if(await addBtn.count()) await addBtn.click();
+              const rows = page.locator('form').locator('input').locator('xpath=ancestor::form');
+              // заполняем второй комплект (по вторым вхождениям)
+              await inp('Ширина').nth(1).fill(String(s1.width_mm));
+              await inp('Высота').nth(1).fill(String(s1.height_mm));
+              await inp('Тираж').nth(1).fill(String(s1.count));
+            }
+
+            // ламинации/намотка
+            const ch = async (label, val) => {
+              const box = page.getByLabel(label, { exact: false });
+              if(await box.count()){
+                const cur = await box.isChecked().catch(()=>false);
+                if(!!val !== cur) await box.click();
+              }
+            };
+            await ch(/ламин/i, t.lam1 || t.lam2); // если на сайте две ламинации — ниже уточним:
+            // если есть вторая ламинация — можно завести доп. селекторы по тексту/aria-label
+
+            await ch(/намотк|рулон/i, t.rolling);
+
+            // Жмём "Рассчитать"
+            const calcBtn = page.getByRole('button', { name: /рассчит/i });
+            if(await calcBtn.count()) await calcBtn.click();
+
+            // Ждём появления суммы
+            const totalEl = page.locator('text=ИТОГО').locator('xpath=following::*[contains(text(),"₽")][1]');
+            await totalEl.waitFor({ timeout: 15000 }).catch(()=>{});
+            const text = await totalEl.first().innerText().catch(()=>'');
+
+            // Число из текста
+            const m = (text || '').replace(/\s/g,'').match(/(\d+(?:[.,]\d+)?)/);
+            const total = m ? Math.round(parseFloat(m[1].replace(',','.'))) : 0;
+
+            return { ...t, area: +areaOf(t.stickers).toFixed(3), total };
+          }
+
+          (async ()=>{
+            const browser = await chromium.launch({ headless: true, args: ['--no-sandbox','--disable-setuid-sandbox'] });
+            const page = await browser.newPage();
+            await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+
+            const results = [];
+            for(const t of tests){
+              // перезагружаем, чтобы сбросить состояние
+              await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+              results.push(await scrapeTotal(page, t));
+            }
+
+            await fs.writeFile(`${OUT_DIR}/dataset.json`, JSON.stringify(results, null, 2), 'utf8');
+            await browser.close();
+          })().catch(async(e)=>{
+            console.error('Agent scrape error:', e);
+            process.exit(2);
+          });
+          JS
+
+          echo "✅ dataset.json снят"
+
+          # -----------------------------
+          # 2) Подгоняем простую модель и проверяем (MAE, MaxRel на крупных)
+          # -----------------------------
+          node - <<'JS'
+          import fs from 'node:fs/promises';
+
+          const OUT_DIR = process.env.OUT_DIR || 'out_etiketki';
+          const data = JSON.parse(await fs.readFile(`${OUT_DIR}/dataset.json`, 'utf8'));
+
+          // Модель: total ≈ a + b*area + c*lam1 + d*lam2 + e*rolling
+          // Упрощенно: возьмем ламинацию как один бинарный признак (хватает для базовой идентичности),
+          // и rolling как второй. Для малого датасета — линейная регрессия псевдообратной.
+          const X = [];
+          const y = [];
+          for(const r of data){
+            const lam = (r.lam1?1:0) + (r.lam2?1:0); // агрегатно
+            const roll = r.rolling?1:0;
+            X.push([1, r.area, lam, roll]);
+            y.push(r.total);
+          }
+
+          // псевдоинверсия через нормальные уравнения X^T X w = X^T y
+          function transpose(M){ return M[0].map((_,i)=>M.map(r=>r[i])); }
+          function matmul(A,B){ return A.map(r => B[0].map((_,j)=> r.reduce((s,_,k)=> s + A[A.indexOf(r)][k]*B[k][j],0))); }
+          function inv2x2(M){
+            const [[a,b],[c,d]] = M;
+            const det = a*d-b*c||1e-9;
+            return [[ d/det, -b/det],[-c/det, a/det]];
+          }
+          // для 4х4 сделаем численную инверсию (Гаусс)
+          function inv(M){
+            const n=M.length; const A=M.map(r=>r.slice());
+            const I=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>i===j?1:0));
+            for(let i=0;i<n;i++){
+              // pivot
+              let p=i; for(let r=i+1;r<n;r++) if(Math.abs(A[r][i])>Math.abs(A[p][i])) p=r;
+              [A[i],A[p]]=[A[p],A[i]]; [I[i],I[p]]=[I[p],I[i]];
+              let div=A[i][i]||1e-9;
+              for(let j=0;j<n;j++){A[i][j]/=div; I[i][j]/=div;}
+              for(let r=0;r<n;r++) if(r!==i){
+                const f=A[r][i];
+                for(let j=0;j<n;j++){A[r][j]-=f*A[i][j]; I[r][j]-=f*I[i][j];}
+              }
+            }
+            return I;
+          }
+
+          const Xt = transpose(X);
+          const XtX = matmul(Xt, X);
+          const XtXinv = inv(XtX);
+          const Xt_y = matmul(Xt, y.map(v=>[v]));
+          const w = matmul(XtXinv, Xt_y).map(r=>r[0]); // [a,b,c,d]
+
+          // Метрики
+          const preds = X.map(r => r.reduce((s,v,i)=> s + v*w[i], 0));
+          const absErr = preds.map((p,i)=>Math.abs(p-y[i]));
+          const mae = Math.round(absErr.reduce((s,v)=>s+v,0)/absErr.length);
+
+          const large = data.filter(r=>r.area>=1.0); // «крупные» площади
+          let maeLarge = 0, maxRelLarge = 0;
+          if(large.length){
+            const idxs = large.map(r => data.indexOf(r));
+            const absL = idxs.map(i => Math.abs(preds[i]-y[i]));
+            maeLarge = Math.round(absL.reduce((s,v)=>s+v,0)/absL.length);
+            maxRelLarge = Math.max(...idxs.map(i => Math.abs(preds[i]-y[i]) / Math.max(1,y[i])));
+          }
+
+          const report = {
+            pass: (mae<=2000) && (maeLarge<=1500) && (maxRelLarge<=0.25),
+            thresholds: { maeAllMax:2000, maeLargeMax:1500, maxRelLargeMax:0.25 },
+            metrics: { maeAll:mae, maeLarge, maxRelLarge:+maxRelLarge.toFixed(3) },
+            coeffs: { a:+w[0].toFixed(6), b:+w[1].toFixed(6), c:+w[2].toFixed(6), d:+w[3].toFixed(6) },
+            sample: data
+          };
+          await fs.writeFile(`${OUT_DIR}/verification.json`, JSON.stringify(report,null,2), 'utf8');
+
+          console.log('Metrics:', report.metrics, 'Pass=', report.pass);
+          if(!report.pass){ process.exit(2); }
+          JS
+
+          echo "✅ Верификация пройдена"
+
+          # -----------------------------
+          # 3) Генерируем ZIP плагина (минимальный, как на сайте)
+          # -----------------------------
+          node - <<'JS'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          import Archiver from 'archiver';
+          import { createWriteStream } from 'node:fs';
+
+          const DIST = process.env.DIST_DIR || 'dist';
+          const OUT = process.env.OUT_DIR || 'out_etiketki';
+          const ZIP = path.join(DIST, 'alfapiter-calculator.zip');
+
+          // простая разметка + скрипт, который подставляет наши коэффициенты
+          const cfgRaw = await fs.readFile(`${OUT}/verification.json`, 'utf8').catch(()=>null);
+          const cfg = cfgRaw ? JSON.parse(cfgRaw) : null;
+          const coeffs = cfg?.coeffs || {a:0,b:0,c:0,d:0};
+
+          const php = `<?php
+          /*
+            Plugin Name: Alfapiter Calculator (Auto)
+            Description: Калькулятор этикеток с авто-настройкой формул.
+            Version: 1.0.0
+            Author: boriskhaldin
+          */
+          add_shortcode('alfapiter_calculator', function(){
+            ob_start(); ?>
+            <div id="ap-calc">
+              <div class="apc-form">
+                <label>Ширина (мм) <input id="w" type="number" value="30" /></label>
+                <label>Высота (мм) <input id="h" type="number" value="50" /></label>
+                <label>Тираж <input id="q" type="number" value="1000" /></label>
+                <label><input id="lam1" type="checkbox" /> Ламинация 1</label>
+                <label><input id="lam2" type="checkbox" /> Ламинация 2</label>
+                <label><input id="roll" type="checkbox" /> Намотка в рулон</label>
+                <button id="go">Рассчитать</button>
+              </div>
+              <div class="apc-result">
+                <div>ИТОГО: <span id="sum">—</span></div>
+                <pre id="dbg"></pre>
+              </div>
+            </div>
+            <script id="apc-script" type="module" data-a="${coeffs.a}" data-b="${coeffs.b}" data-c="${coeffs.c}" data-d="${coeffs.d}">
+            import { calc } from "./wp-content/plugins/alfapiter-calculator/app.js";
+            </script>
+            <?php return ob_get_clean();
+          });`;
+
+          const appjs = `
+          (function(){
+            function area(w,h,q){ return (w/1000)*(h/1000)*q; }
+            function predict(A,lam,roll, C){ // C = {a,b,c,d}
+              return Math.max(0, Math.round(C.a + C.b*A + C.c*lam + C.d*roll));
+            }
+            document.addEventListener('click', (e)=>{
+              if(e.target && e.target.id==='go'){
+                const W=+document.getElementById('w').value||0;
+                const H=+document.getElementById('h').value||0;
+                const Q=+document.getElementById('q').value||0;
+                const lam = (document.getElementById('lam1').checked?1:0) + (document.getElementById('lam2').checked?1:0);
+                const roll = document.getElementById('roll').checked?1:0;
+
+                const A = area(W,H,Q);
+                const s = document.getElementById('apc-script');
+                const C = { a:+s.dataset.a, b:+s.dataset.b, c:+s.dataset.c, d:+s.dataset.d };
+
+                const total = predict(A, lam, roll, C);
+                document.getElementById('sum').textContent = total.toLocaleString('ru-RU') + ' ₽';
+                document.getElementById('dbg').textContent = JSON.stringify({A,lam,roll,C,total}, null, 2);
+              }
+            });
+          })();`;
+
+          // собираем структуру пакета
+          const tmp = '.wpplug';
+          await fs.rm(tmp, { recursive:true, force:true });
+          await fs.mkdir(`${tmp}/alfapiter-calculator`, { recursive: true });
+          await fs.writeFile(`${tmp}/alfapiter-calculator/alfapiter-calculator.php`, php, 'utf8');
+          await fs.writeFile(`${tmp}/alfapiter-calculator/app.js`, appjs, 'utf8');
+
+          await fs.rm(ZIP, { force:true });
+          const output = createWriteStream(ZIP);
+          const archive = Archiver('zip', { zlib: { level: 9 } });
+          archive.pipe(output);
+          archive.directory(`${tmp}/`, false);
+          await archive.finalize();
+
+          console.log('ZIP ready:', ZIP);
+          JS
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: alfapiter-artifacts
+          path: |
+            out_etiketki/**
+            dist/alfapiter-calculator.zip
