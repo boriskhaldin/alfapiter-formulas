@@ -1,0 +1,82 @@
+name: Build & Verify (no-bot)
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Setup Google Chrome (stable)
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Export Puppeteer path
+        shell: bash
+        run: |
+          set -e
+          CHROME_BIN="$(command -v google-chrome || true)"
+          if [ -z "$CHROME_BIN" ]; then
+            CHROME_BIN="$(command -v chrome || true)"
+          fi
+          if [ -z "$CHROME_BIN" ]; then
+            CHROME_BIN="$(command -v chromium-browser || true)"
+          fi
+          echo "PUPPETEER_EXECUTABLE_PATH=$CHROME_BIN" >> $GITHUB_ENV
+          echo "PUPPETEER_PRODUCT=chrome" >> $GITHUB_ENV
+          echo "Using Chrome at: $CHROME_BIN"
+
+      - name: Run auto-calculation (scrape site)
+        run: |
+          node -v
+          echo "Chrome: $PUPPETEER_EXECUTABLE_PATH"
+          # если агент падает – не валим всю сборку, но лог сохраняем
+          node agent-autocalc.mjs || echo "::warning ::agent-autocalc.mjs returned non-zero"
+
+      - name: Fit regression
+        run: node agent-regress.mjs
+
+      - name: Verify all
+        run: node verify-all.mjs
+
+      - name: Package WP plugin
+        shell: bash
+        run: |
+          mkdir -p dist
+          rm -f dist/alfapiter-calculator.zip
+          if [ -d "wp-plugin" ]; then
+            (cd wp-plugin && zip -r ../dist/alfapiter-calculator.zip . -x "**/.DS_Store")
+          elif [ -d "wp-plugin-v3" ]; then
+            (cd wp-plugin-v3 && zip -r ../dist/alfapiter-calculator.zip . -x "**/.DS_Store")
+          elif [ -d "wp-plugin-v2" ]; then
+            (cd wp-plugin-v2 && zip -r ../dist/alfapiter-calculator.zip . -x "**/.DS_Store")
+          else
+            echo "No wp-plugin directory found, skipping zip"
+          fi
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: alfapiter-artifacts
+          path: |
+            out_etiketki/**
+            dist/*.zip
+            out_etiketki/verification.json
+          if-no-files-found: warn
