@@ -1,0 +1,91 @@
+name: Build & Verify (Alfapiter Calculator)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "wp-plugin", "calc" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install system deps for headless Chrome
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y \
+            libgtk-3-0t64 libnss3 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 libdrm2 \
+            libxdamage1 libxfixes3 libxcomposite1 libxrandr2 libgbm1 libasound2t64 \
+            libxkbcommon0 libpango-1.0-0 libx11-xcb1 libxshmfence1 fonts-liberation \
+            jq zip
+
+      - name: Install npm deps
+        run: |
+          npm ci || npm i
+
+      - name: Install Chrome for Puppeteer cache
+        run: |
+          npx puppeteer browsers install chrome || true
+          echo "PUPPETEER_EXECUTABLE_PATH=$(echo $HOME/.cache/puppeteer/chrome/linux-*/chrome-linux64/chrome)" >> $GITHUB_ENV
+
+      - name: Quick headless self-test
+        run: |
+          node --input-type=module -e "import puppeteer from \"puppeteer\";(async()=>{const b=await puppeteer.launch({executablePath: process.env.PUPPETEER_EXECUTABLE_PATH, headless:true, args:[\"--no-sandbox\",\"--disable-setuid-sandbox\"]});console.log(\"Chrome OK\", process.env.PUPPETEER_EXECUTABLE_PATH);await b.close();})()"
+
+      - name: Patch agent to use explicit Chrome (idempotent)
+        run: |
+          if ! grep -q PUPPETEER_EXECUTABLE_PATH agent-autocalc.mjs 2>/dev/null; then
+            sed -i "s/puppeteer.launch({/puppeteer.launch({ executablePath: process.env.PUPPETEER_EXECUTABLE_PATH, headless:true, args:[\"--no-sandbox\",\"--disable-setuid-sandbox\"], /" agent-autocalc.mjs || true
+          fi
+
+      - name: Run agents (scrape -> regress -> verify)
+        shell: bash
+        continue-on-error: true
+        run: |
+          set -e
+          node agent-autocalc.mjs || true
+          node agent-regress.mjs || true
+          node verify-all.mjs || true
+
+      - name: Show verification
+        run: |
+          echo "---- verification.json ----"
+          cat out_etiketki/verification.json || echo "no verification.json"
+          echo "---------------------------"
+
+      - name: Package ZIP
+        run: |
+          mkdir -p dist
+          zip -r dist/alfapiter-calculator.zip out_etiketki >/dev/null || true
+          ls -lh dist/alfapiter-calculator.zip || true
+
+      - name: Upload artifacts (ZIP + reports)
+        uses: actions/upload-artifact@v4
+        with:
+          name: alfapiter-artifacts
+          path: |
+            dist/alfapiter-calculator.zip
+            out_etiketki/config.json
+            out_etiketki/dataset.csv
+            out_etiketki/fit-report.json
+            out_etiketki/verification.json
+            out_etiketki/log-verify.txt
+            out_etiketki/log-autocalc.txt
+            out_etiketki/log-regress.txt
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Fail job if verification didn’t pass thresholds
+        run: |
+          STATUS=$(jq -r ".pass // false" out_etiketki/verification.json 2>/dev/null || echo "false")
+          echo "verification pass? => $STATUS"
+          test "$STATUS" = "true"
